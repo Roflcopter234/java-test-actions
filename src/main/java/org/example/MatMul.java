@@ -6,13 +6,13 @@ import java.util.List;
 
 public class MatMul {
     List<List<Double>> matmul(List<List<Double>> a, List<List<Double>> b) {
-        if (a.size() != b.get(0).size()) {
+        if (a.get(0).size() != b.size()) {
             throw new RuntimeException("a.size() != b.get(0).size()");
         }
 
         List<List<Double>> result = new ArrayList<List<Double>>();
-        for (int i = 0; i < a.get(0).size(); i++) {
-            Double[] data = new Double[b.size()];
+        for (int i = 0; i < a.size(); i++) {
+            Double[] data = new Double[b.get(0).size()];
             Arrays.fill(data,0.0);
             result.add(Arrays.asList(data));
         }
